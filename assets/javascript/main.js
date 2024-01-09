@@ -4,14 +4,13 @@ const grid = document.querySelector('main')
 const buttonDiv = document.querySelector('#buttonDiv')
 let i = 0 // für callback funktion
 
+
 fetch('https://fakestoreapi.com/products')
     .then(res => res.json())
     .then(json => {
-        console.log(json);
         arrayToDiv(json); // fetch und die funktion zum abbilden der elemente
     })
     .catch((error) => console.log(error))
-
 
 fetch('https://fakestoreapi.com/products/categories')
 .then(res => res.json())
@@ -30,6 +29,39 @@ fetch('https://fakestoreapi.com/products/categories')
         })})
 })
 
+// Sortierfunktion
+const sortFunc = () => {
+    fetch('https://fakestoreapi.com/products')
+    .then(res => res.json())
+    .then(json => {
+        const sortArray = json
+        if (sortElement.value === 'priceup') {
+            sortArray.sort((a, b) => a.price - b.price)
+            filter(sortArray)
+        } else {
+            sortArray.sort((a, b) => b.price - a.price)
+            filter(sortArray)
+        }
+    })
+}
+sortElement.addEventListener('change', sortFunc)
+
+// Suchfunktion reagiert auf keyup und enter lol
+const searchFunc = () => {
+    fetch('https://fakestoreapi.com/products')
+        .then(res => res.json())
+        .then(json => {
+            const filteredArray = json.filter(product => product.title.toLowerCase().includes(inputElement.value.toLowerCase()));
+            if (filteredArray.length === 0) {
+                return false;
+            } else {
+                filter(filteredArray);
+            }
+        });
+}
+inputElement.addEventListener('keyup', searchFunc)
+
+
 // kombiniert reset und die funktion zum abbilden der elemente
 const filter = (x) => {
     reset()
@@ -47,6 +79,7 @@ function arrayToDiv(array) {
         const button = document.createElement('button');
 
         img.setAttribute('src', el.image);
+        img.setAttribute('alt', el.id)
         product.textContent = el.title;
         price.textContent = el.price + ' €'
         button.textContent = 'Add to cart'

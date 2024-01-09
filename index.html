@@ -11,10 +11,10 @@
         <h1>Amazon auf Noob angelehnt</h1>
         <section>
             <div>
-                <form action="">
-                    <input type="text" name="input" id="input">
+                <form onsubmit="searchFunc(); return false">
+                    <input type="text" name="input" id="input" placeholder="search here">
                     <select name="sort" id="sort">
-                        <option value="" disabled selected>Sort by</option>
+                        <option value="" disabled selected hidden>Sort by</option>
                         <option value="priceup">Price up</option>
                         <option value="pricedown">Price down</option>
                     </select>
@@ -26,6 +26,9 @@
         </section>
     </header>
     <main></main>
+    <footer>
+        <p>Hier könnte ihre Werbung stehen</p>
+    </footer>
     <script src="./assets/javascript/main.js"></script>
 </body>
 </html>
