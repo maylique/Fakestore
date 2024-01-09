@@ -20,10 +20,12 @@ button {
 
 button:hover {
     transform: scale(1.1);
+    background: rgb(253,29,29);
+    background: radial-gradient(circle, rgba(253,29,29,1) 20%, rgba(252,176,69,1) 100%);
 }
 
 html {
-    background-color: #3f3f3f;
+    background-color: #1a1a1a;
     color: white;
 }
 
@@ -33,13 +35,15 @@ header {
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    margin: 1rem;
     padding: 1rem;
-    background-color: rgba(0, 0, 255, 0.341);
+    height: 30dvh;
+    background: rgb(2,0,36);
+    background: linear-gradient(180deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 100%);
 }
 
 h1 {
     margin: 1rem;
+    margin-bottom: 3rem;
     padding: .4rem;
     text-align: center;
 }
@@ -59,16 +63,29 @@ form input {
     text-align: center;
     padding: .7rem 1rem;
     margin: 0 3rem;
+    width: 10rem;
+    transition: width 1s;
+    font-size: 1.2rem;
+}
+
+form input:focus {
+    width: 20rem;
 }
 
 form input::placeholder {
     color: white;
+    font-size: 1.2rem;
 }
 
 form select {
     background-color: #3f3f3f;
     text-align: center;
     color: white;
+    font-size: 1.2rem;
+}
+
+option {
+    font-size: 1.2rem;
 }
 
 header div {
@@ -84,13 +101,16 @@ header div button {
     margin: .5rem;
     color: white;
     border: 2px solid white;
+    box-shadow: 0 0 1rem rgb(60, 0, 255);
+    font-size: 1.2rem;
 }
 
 /* main */
 main {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
-    gap: 1rem;
+    gap: 3rem;
+    row-gap: 5rem;
     color: black;
     margin: 4rem;
 }
@@ -104,6 +124,13 @@ main div {
     flex-direction: column;
     font-size: .7rem;
     text-align: center;
+    border: 2px solid black;
+    box-shadow: 0 0 .7rem black;
+    transition: .3s ease-in;
+}
+
+main div:hover {
+    transform: scale(1.035);
 }
 
 
@@ -114,6 +141,7 @@ main div div {
     justify-content: space-between;
     flex-direction: row;
     margin: .4rem;
+    padding: .6rem 1rem;
 }
 /* zeigt nur die ersten zwei zeilen */
 main h2 {
@@ -141,7 +169,7 @@ img {
     margin: .5rem;
     padding: .5rem;
     margin-bottom: 4rem;
-    transition: .1s ease-in;
+    transition: .25s ease-in;
 }
 
 img:hover {
@@ -158,7 +186,8 @@ footer {
     border-radius: 20rem;
     border-bottom-right-radius: 0;
     border-bottom-left-radius: 0;
-    background-color: rgba(0, 0, 255, 0.341);
+    background: rgb(2,0,36);
+    background: linear-gradient(360deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 100%);
 }
 
 @media (max-width: 430px){
