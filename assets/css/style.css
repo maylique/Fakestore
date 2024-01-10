@@ -228,6 +228,10 @@ footer {
 
 @media (max-width: 1366px){
 
+    html :hover, main div:hover {
+        transform: none;
+    }
+
     main {
         grid-template-columns: repeat(4, 1fr);
     }
