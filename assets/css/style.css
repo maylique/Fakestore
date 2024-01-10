@@ -20,7 +20,6 @@ button {
 
 button:hover {
     transform: scale(1.1);
-    background: rgb(253,29,29);
     background: radial-gradient(circle, rgba(253,29,29,1) 20%, rgba(252,176,69,1) 100%);
 }
 
@@ -38,7 +37,6 @@ header {
     padding: 1rem;
     padding-bottom: 3rem;
     min-height: 35dvh;
-    background: rgb(2,0,36);
     background: linear-gradient(180deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 100%);
 }
 
@@ -105,7 +103,7 @@ header p {
 
 header div button {
     padding: .6rem .9rem;
-    background-color:rgba(0, 0, 255, 0.629);
+    background:rgba(0, 0, 255, 0.629);
     margin: .5rem;
     color: white;
     border: 2px solid white;
@@ -165,7 +163,7 @@ main div div p {
 
 /* add to cart button */
 main button {
-    background-color: orange;
+    background: orange;
     padding: .4rem .7rem;
 }
 
@@ -194,11 +192,15 @@ footer {
     border-radius: 20rem;
     border-bottom-right-radius: 0;
     border-bottom-left-radius: 0;
-    background: rgb(2,0,36);
     background: linear-gradient(360deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 100%);
 }
 
 @media (max-width: 768px){
+
+    html :hover, main div:hover {
+        transform: none;
+    }
+
     main {
         display: flex;
         flex-direction: column;
